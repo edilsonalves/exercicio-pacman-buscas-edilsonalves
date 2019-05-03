@@ -118,6 +118,28 @@ def breadthFirstSearch(problem):
     DICA: Utilizar util.PriorityQueue
     *** YOUR CODE HERE ***
     """
+    queue = util.Queue()
+    visited = []
+    start_state = (problem.getStartState(), [])
+    queue.push(start_state)
+
+    while not queue.isEmpty():
+        removed = queue.pop()
+        position = removed[0]
+        path = removed[1]
+
+        if position not in visited:
+            visited.append(position)
+
+            if problem.isGoalState(position):
+                return path
+
+            successors = problem.getSuccessors(position)
+
+            for successor in list(successors):
+                if successor[0] not in visited:
+                    queue.push((successor[0], path + [successor[1]]))
+
     util.raiseNotDefined()
 
 
