@@ -86,7 +86,6 @@ def depthFirstSearch(problem):
     print "Is the start a goal?", problem.isGoalState(problem.getStartState())
     print "Start's successors:", problem.getSuccessors(problem.getStartState())
     """
-    "*** YOUR CODE HERE ***"
     stack = util.Stack()
     visited = []
     start_state = (problem.getStartState(), [])
@@ -115,8 +114,6 @@ def depthFirstSearch(problem):
 def breadthFirstSearch(problem):
     """
     Search the shallowest nodes in the search tree first.
-    DICA: Utilizar util.PriorityQueue
-    *** YOUR CODE HERE ***
     """
     queue = util.Queue()
     visited = []
@@ -144,8 +141,8 @@ def breadthFirstSearch(problem):
 
 
 def uniformCostSearch(problem):
-    """Search the node of least total cost first.
-    *** YOUR CODE HERE ***
+    """
+    Search the node of least total cost first.
     """
     priority_queue = util.PriorityQueue()
     visited = {}
@@ -179,8 +176,9 @@ def nullHeuristic(state, problem=None):
 
 
 def aStarSearch(problem, heuristic=nullHeuristic):
-    """Search the node that has the lowest combined cost and heuristic first."""
-    "*** YOUR CODE HERE ***"
+    """
+    Search the node that has the lowest combined cost and heuristic first.
+    """
     priority_queue = util.PriorityQueue()
     visited = {}
     start_state = (problem.getStartState())
